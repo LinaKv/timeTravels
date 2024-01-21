@@ -1,0 +1,38 @@
+@import '../../variables';
+@import '../../mixin';
+
+.headerWrapper {
+    display: flex;
+    align-items: center;
+    cursor: default;
+}
+
+.header {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 120%;
+    width: 353px;
+}
+
+.gradientWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    margin-right: 78px;
+
+    @include for-phone-only {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    .header {
+        margin: 59px 0px 0px 20px;
+        width: 123px;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+    }
+}

@@ -1,0 +1,74 @@
+@import '../../../variables';
+@import '../../../mixin';
+.tracking {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @include for-phone-only {
+        padding-left: 3px;
+    }
+}
+
+.settings {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+
+    .prevState,
+    .nextState {
+        cursor: pointer;
+        &.disabled {
+            opacity: 0.5;
+            cursor: auto;
+        }
+        &:hover {
+            fill: #fff;
+        }
+    }
+
+    @include for-phone-only {
+        margin-top: 10.5px;
+        display: flex;
+        gap: 8px;
+
+        .prevState,
+        .nextState {
+            height: 25px;
+            width: 25px;
+
+            &-disabled {
+                opacity: 0.5;
+                height: 25px;
+                width: 25px;
+            }
+        }
+    }
+}
+
+.bulletsWrapper {
+    display: none;
+    @include for-phone-only {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 5px;
+        margin-left: 38px;
+        width: 86px;
+        padding-top: 3px;
+
+        .bullet {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $mainDarkColor;
+            opacity: 0.4;
+            cursor: pointer;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}

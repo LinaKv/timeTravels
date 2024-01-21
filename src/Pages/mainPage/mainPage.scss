@@ -1,0 +1,27 @@
+@import '../../variables';
+@import '../../mixin';
+
+.mainPageWrapper {
+    background-color: $mainLightColor;
+    min-height: 100vh;
+    color: $mainDarkColor;
+
+    .mainPage {
+        width: 1440px;
+        margin-left: 320px;
+        height: 100%;
+        padding-top: 170px;
+    }
+
+    @include for-phone-only {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .mainPage {
+            width: 100%;
+            margin-left: 0px;
+            padding-top: 0px;
+            padding-left: 0px;
+        }
+    }
+}

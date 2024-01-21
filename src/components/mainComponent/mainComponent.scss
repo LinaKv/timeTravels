@@ -1,0 +1,40 @@
+@import '../../mixin';
+
+.mainComponentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 96px;
+
+    @include for-phone-only {
+        margin-top: 56px;
+    }
+
+    .mobileWrapper {
+        .lineWrapper {
+            display: none;
+        }
+        @include for-phone-only {
+            display: flex;
+            flex-direction: column-reverse;
+            margin-top: 45px;
+
+            .lineWrapper {
+                display: block;
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+.settingsWrapper {
+    margin-top: 137px;
+    margin-left: 80px;
+    cursor: default;
+
+    @include for-phone-only {
+        margin-top: 68px;
+        margin-left: 20px;
+        left: 10px;
+    }
+}

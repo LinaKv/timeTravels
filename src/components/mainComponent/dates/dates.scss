@@ -1,0 +1,40 @@
+@import '../../../variables';
+@import '../../../mixin';
+
+.datesWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 217px;
+    width: 973px;
+    min-height: 160px;
+    cursor: default;
+    font-size: 200px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160px;
+    letter-spacing: -4px;
+
+    .firstYear,
+    .secondYear {
+        z-index: 0;
+    }
+
+    .firstYear {
+        color: var(--Iris-100, #5d5fef);
+    }
+
+    .secondYear {
+        color: var(--Fuschia-100, #ef5da8);
+    }
+
+    @include for-phone-only {
+        width: 273px;
+        margin-left: 20px;
+        font-size: 56px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -1.12px;
+        min-height: 73px;
+    }
+}

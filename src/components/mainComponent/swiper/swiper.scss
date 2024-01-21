@@ -1,0 +1,84 @@
+@import '../../../variables';
+@import '../../../mixin';
+
+.swiperWrapper {
+    margin-left: 80px;
+    margin-right: 160px;
+    margin-top: 56px;
+    position: relative;
+    height: 135px;
+
+    @include for-phone-only {
+        margin-left: 20px;
+        margin-right: 0px;
+        margin-top: 20px;
+        position: relative;
+        height: 114px;
+    }
+}
+
+.swiper {
+    opacity: 0;
+}
+
+.switch-transition {
+    position: relative;
+
+    &-appear {
+        opacity: 0;
+        &-active {
+            opacity: 0;
+        }
+        &-done {
+            opacity: 1;
+            transition: opacity 250ms ease-in;
+        }
+    }
+    &-enter {
+        opacity: 0;
+        &-active {
+            opacity: 0;
+        }
+        &-done {
+            opacity: 1;
+            transition: opacity 250ms ease-in;
+        }
+    }
+    &-exit {
+        opacity: 1;
+        &-active {
+            opacity: 0;
+            transition: opacity 250ms linear;
+        }
+        &-done {
+            opacity: 0;
+        }
+    }
+}
+
+.nextButton,
+.prevButton {
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+    height: 40px;
+    width: 40px;
+    filter: drop-shadow(0px 0px 8px rgba(56, 119, 238, 0.1));
+    &-circle {
+        stroke: #fff;
+    }
+    &-path {
+        stroke: #3877ee;
+    }
+}
+
+.nextButton {
+    right: -80px;
+}
+
+.prevButton {
+    left: -65px;
+}

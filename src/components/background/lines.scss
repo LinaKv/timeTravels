@@ -1,0 +1,29 @@
+@import '../../variables';
+
+.verticalLine {
+    border-left: 1px solid $mainDarkColor;
+    height: 100%;
+    opacity: 0.1;
+    position: absolute;
+
+    &-left {
+        left: 320px;
+    }
+
+    &-center {
+        left: 1040px;
+    }
+
+    &-right {
+        right: 160px;
+    }
+}
+
+.horizontalLineCenter {
+    border-top: 1px solid $mainDarkColor;
+    width: 1440px;
+    opacity: 0.1;
+    position: absolute;
+    top: 480px;
+    left: 320px;
+}

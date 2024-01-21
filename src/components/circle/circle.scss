@@ -1,0 +1,111 @@
+@import '../../variables';
+$circleRadius: 265px; // Радиус окружности
+$pointSize: 8px; // Размер точки
+$numberOfPoints: 6; // Количество точек
+
+@mixin calculatePointsOnCircle($n) {
+    $angle: 360deg / $n;
+
+    @for $i from 1 through $n {
+        $currentAngle: $angle * $i;
+        .point-#{$i} {
+            left: $circleRadius * cos($currentAngle) + $circleRadius - $pointSize / 2;
+            top: $circleRadius * sin($currentAngle) + $circleRadius - $pointSize / 2;
+        }
+    }
+}
+
+.circle {
+    position: absolute;
+    top: 215px;
+    left: 775px;
+    border-radius: 50%;
+    border: 1px solid $mainDarkColor;
+    opacity: 0.1;
+    display: block;
+    height: 530px;
+    width: 530px;
+}
+
+.point-container {
+    position: absolute;
+    top: 215px;
+    left: 775px;
+    height: 530px;
+    width: 530px;
+    z-index: 5;
+    margin-top: -2px;
+    margin-left: -3.5px;
+
+    .point {
+        border-radius: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        transition: all 300ms ease-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-active {
+            width: 54px;
+            height: 54px;
+            background-color: $mainLightColor;
+            border: 1px solid $mainDarkColor;
+            display: flex;
+            position: relative;
+
+            .number {
+                opacity: 1;
+            }
+
+            .area {
+                position: absolute;
+                width: 50px;
+                right: -62px;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 30px;
+                transition: opacity 300ms ease-out;
+                transition-delay: 2s;
+            }
+        }
+
+        &-disabled {
+            width: $pointSize;
+            height: $pointSize;
+            background-color: $mainDarkColor;
+
+            .number,
+            .area {
+                opacity: 0;
+            }
+
+            .area {
+                position: absolute;
+            }
+        }
+
+        .number {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+        }
+
+        &:hover {
+            width: 56px;
+            height: 56px;
+            background-color: $mainLightColor;
+            border: 1px solid $mainDarkColor;
+            transition: width 200ms ease-in, height 200ms ease-in, background-color 200ms ease-in, border 200ms ease-in;
+            cursor: pointer;
+
+            .number {
+                opacity: 1;
+            }
+        }
+    }
+
+    @include calculatePointsOnCircle(6);
+}
