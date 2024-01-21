@@ -42,7 +42,7 @@ function Scrumble({ text, className }: Props) {
 
     useEffect(() => {
         setTextArray(gen);
-        if (activeText == textArray.length - 1) {
+        if (activeText === textArray.length - 1) {
             setActiveText(0);
         }
         setPlay(true);

@@ -2,9 +2,7 @@ import React from 'react';
 import './lines.scss';
 import useMediaQuery from '../../hooks/useMediaQuery';
 
-type Props = {};
-
-function Lines({}: Props) {
+function Lines() {
     const showLines = useMediaQuery('(min-width: 1920px)');
     if (!showLines) return null;
     return (

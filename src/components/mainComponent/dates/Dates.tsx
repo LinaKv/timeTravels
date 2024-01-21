@@ -3,11 +3,11 @@ import './dates.scss';
 
 import Scrumble from '../../../helpers/Scrumble';
 
-type Props = {
+type DateProps = {
     dates: string;
 };
 
-function Dates({ dates }: Props) {
+function Dates({ dates }: DateProps) {
     const datesArr = dates.split('-');
 
     return (

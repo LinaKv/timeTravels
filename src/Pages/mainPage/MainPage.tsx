@@ -4,9 +4,7 @@ import Lines from '../../components/background/Lines';
 import Header from '../../components/header/Header';
 import MainComponent from '../../components/mainComponent/MainComponent';
 
-type Props = {};
-
-function MainPage({}: Props) {
+function MainPage() {
     return (
         <div className="mainPageWrapper">
             <Lines />

@@ -14,25 +14,25 @@ function MainComponent() {
     const [event, setEvent] = useState(timeEvents[0]);
     const isDesktop = useMediaQuery('(min-width: 1440px)');
 
-    function onClickPrev() {
+    const onClickPrev = () => {
         if (timeEvents.indexOf(event)) {
             setEvent((prevEvent) => timeEvents[timeEvents.indexOf(prevEvent) - 1]);
         }
-    }
+    };
 
-    function onClickNext() {
+    const onClickNext = () => {
         if (timeEvents.indexOf(event) + 1 !== timeEvents.length) {
             setEvent((prevEvent) => timeEvents[timeEvents.indexOf(prevEvent) + 1]);
         }
-    }
+    };
 
-    function onClickToChangeEvent(id: string) {
+    const onChangeEvent = (id: string) => {
         setEvent(timeEvents.find((el) => el.id === id) || timeEvents[0]);
-    }
+    };
 
     return (
         <div className="mainComponentWrapper">
-            {isDesktop && <Circle eventId={event.id} onClickCircle={onClickToChangeEvent} area={event.Area} />}
+            {isDesktop && <Circle eventId={event.id} onClickCircle={onChangeEvent} area={event.Area} />}
             <Dates dates={event.Dates} />
             <div className="mobileWrapper">
                 <div className="settingsWrapper">
@@ -40,7 +40,7 @@ function MainComponent() {
                         event={event}
                         onClickPrev={onClickPrev}
                         onClickNext={onClickNext}
-                        onClickEvent={onClickToChangeEvent}
+                        onClickEvent={onChangeEvent}
                     />
                 </div>
                 <Slider events={event.Events} id={event.id} isDesktop={isDesktop} />

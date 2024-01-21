@@ -2,17 +2,16 @@ import React from 'react';
 import './header.scss';
 import Gradient from '../../elements/Gradient';
 
-type Props = {
+type HeaderProps = {
     header: string;
 };
 
-function Header({ header }: Props) {
+function Header({ header }: HeaderProps) {
     return (
         <div className="headerWrapper">
             <div className="gradientWrapper">
                 <Gradient />
             </div>
-
             <div className="header">{header}</div>
         </div>
     );
